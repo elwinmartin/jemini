@@ -33,34 +33,6 @@ export default class Application {
     return this.express.use(...args);
   }
 
-  get(...args) {
-    return this.express.get(...args);
-  }
-
-  post(...args) {
-    return this.express.post(...args);
-  }
-
-  put(...args) {
-    return this.express.put(...args);
-  }
-
-  patch(...args) {
-    return this.express.patch(...args);
-  }
-
-  delete(...args) {
-    return this.express.delete(...args);
-  }
-
-  head(...args) {
-    return this.express.head(...args);
-  }
-
-  options(...args) {
-    return this.express.options(...args);
-  }
-
   async start() {
     return this.express.listen(this.port, this.host, () => {
       console.log(`Your app is available at http://${this.host}:${this.port}`);
