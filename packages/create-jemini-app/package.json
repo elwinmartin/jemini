@@ -1,0 +1,26 @@
+{
+  "name": "create-jemini-app",
+  "version": "0.1.0",
+  "description": "Scaffold out a fresh Jemini application",
+  "repository": "aniftyco/jemini",
+  "bin": "lib/index.js",
+  "engines": {
+    "node": ">= 8.0.0 < 9.0.0"
+  },
+  "author": {
+    "name": "Nifty Development, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0"
+  },
+  "devDependencies": {}
+}
