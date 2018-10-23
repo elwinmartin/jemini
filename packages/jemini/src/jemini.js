@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import program from 'commander';
+import {Command} from 'commander';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
 import moduleAlias from 'module-alias';
@@ -8,6 +8,7 @@ import babel from '@babel/register';
 import babelConfig from './babel';
 import {loadDependencies} from './utils';
 import {env} from './utils';
+import {name, version} from '../package.json';
 
 dotenv.config();
 process.env.APP_PATH = resolve(env('JEMINI_DEV', '.'));
@@ -15,6 +16,7 @@ moduleAlias.addAlias('@app', env('APP_PATH'));
 babel(babelConfig);
 
 const packageJson = require('@app/package');
+const program = new Command(name).version(version, '-v, --version');
 
 const action = (promise) => (...args) =>
   promise(...args)
@@ -36,8 +38,6 @@ loadDependencies(packageJson, (pkg, dependency) => {
     });
   }
 });
-
-program.version('0.1.0', '-v, --version');
 
 program
   .command('start')
