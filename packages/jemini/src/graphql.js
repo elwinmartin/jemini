@@ -1,6 +1,6 @@
 import {createResolver} from 'apollo-resolvers';
 import {isInstance as isApolloError} from 'apollo-errors';
-import {UnknownError} from './errors';
+import {ApplicationError} from './errors';
 
 export default class GraphQLSchemaTypeDef {
   constructor({resolve, middleware = [], ...definition}) {
@@ -13,7 +13,7 @@ export default class GraphQLSchemaTypeDef {
   resolver(resolve) {
     return createResolver(null, (parent, args, context, error) => {
       if (!isApolloError(error) && !error.safe) {
-        return new UnknownError();
+        return new ApplicationError();
       }
 
       return error;

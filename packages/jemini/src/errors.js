@@ -1,7 +1,7 @@
 import {ApolloError} from 'apollo-errors';
 
-export class UnknownError extends ApolloError {
-  constructor(message = 'An unknown error has occurred! Please try later.') {
-    super('UnknownError', {message});
+export class ApplicationError extends ApolloError {
+  constructor(message = 'An error has occured. Please try again.') {
+    super('ApplicationError', {message});
   }
 }
