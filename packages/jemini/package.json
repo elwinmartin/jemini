@@ -43,7 +43,6 @@
     "helmet": "^3.14.0",
     "lodash": "^4.17.11",
     "module-alias": "^2.1.0",
-    "morgan": "^1.9.1",
-    "serve-static": "^1.13.2"
+    "morgan": "^1.9.1"
   }
 }
