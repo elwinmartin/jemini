@@ -1,0 +1,10 @@
+import {factory} from '@jemini/bookshelf';
+import <%= d.model %> from '@app/models/<%= d.file %>';
+
+export const seed = async (db) => {
+  await db.truncate('<%= d.tableName %>');
+
+  return factory(<%= d.model %>, (faker) => ({
+    key: faker.lorem.text(),
+  })).create(10);
+};

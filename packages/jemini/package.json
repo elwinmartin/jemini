@@ -1,0 +1,49 @@
+{
+  "name": "jemini",
+  "version": "1.0.0",
+  "description": "Create applications from out of this world",
+  "repository": "aniftyco/jemini",
+  "bin": "lib/jemini.js",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 8.0.0 < 9.0.0"
+  },
+  "author": {
+    "name": "Nifty Development, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "apollo-errors": "^1.9.0",
+    "apollo-resolvers": "^1.4.1",
+    "apollo-server-express": "^2.1.0",
+    "app-root-path": "^2.1.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "helmet": "^3.14.0",
+    "lodash": "^4.17.11",
+    "module-alias": "^2.1.0",
+    "morgan": "^1.9.1",
+    "serve-static": "^1.13.2"
+  }
+}

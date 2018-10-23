@@ -1,0 +1,9 @@
+export const up = async ({schema}) => {
+<% if (d.tableName) { %>  return schema.createTable('<%= d.tableName %>', (table) => {
+    table.uuid('id').primary();
+  });<% } %>
+};
+
+export const down = async ({schema}) => {
+<% if (d.tableName) { %>  return schema.dropTableIfExists('<%= d.tableName %>');<% } %>
+};

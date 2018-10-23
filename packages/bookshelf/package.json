@@ -1,0 +1,50 @@
+{
+  "name": "@jemini/bookshelf",
+  "version": "1.0.0",
+  "description": "Bookshelf ORM for PostgreSQL, MySQL, and SQLite3",
+  "repository": "aniftyco/jemini",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 8.0.0 < 9.0.0"
+  },
+  "author": {
+    "name": "Nifty Development, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "config": {
+    "jemini": {
+      "program": "lib/commands",
+      "app": "lib/app"
+    }
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "bookshelf": "^0.13.3",
+    "bookshelf-bcrypt": "^3.0.2",
+    "bookshelf-modelbase": "^2.10.4",
+    "bookshelf-paranoia": "^0.13.0",
+    "bookshelf-scopes": "^1.5.1",
+    "bookshelf-uuid": "^1.0.0",
+    "faker": "^4.1.0",
+    "graphql": "^14.0.2",
+    "knex": "^0.15.2",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "mysql": "^2.16.0",
+    "pg": "^7.5.0",
+    "sqlite3": "^4.0.2"
+  },
+  "peerDependencies": {
+    "mysql": "^2.16.0",
+    "pg": "^7.5.0",
+    "sqlite3": "^4.0.2"
+  }
+}
