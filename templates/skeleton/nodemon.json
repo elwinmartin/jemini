@@ -1,6 +1,0 @@
-{
-  "restartable": "rs",
-  "exec": "jemini start",
-  "watch": ["models/", "schema/", "jemini.js"],
-  "ignore": ["database/", "src/"]
-}
