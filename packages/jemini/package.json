@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Create applications from out of this world",
   "repository": "aniftyco/jemini",
-  "bin": "lib/jemini.js",
+  "bin": "lib/program.js",
   "main": "lib/index.js",
   "engines": {
     "node": ">= 8.0.0"
@@ -39,6 +39,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "find-up": "^3.0.0",
     "graphql": "^14.0.2",
     "helmet": "^3.14.0",
     "lodash": "^4.17.11",
