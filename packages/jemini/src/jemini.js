@@ -52,7 +52,9 @@ program
 
     try {
       require('@app/jemini');
-    } catch (err) {}
+    } catch (err) {
+      // not found, ignore it
+    }
 
     await app.start();
   });
