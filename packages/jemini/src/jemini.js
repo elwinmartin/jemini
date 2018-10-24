@@ -15,7 +15,7 @@ moduleAlias.addAlias('@app', env('APP_PATH'));
 babel(babelConfig);
 
 const packageJson = require('@app/package');
-const program = new Command(name).version(version, '-v, --version');
+const program = new Command(chalk.green(name)).version(version, '-v, --version').usage('[command] [options]');
 
 const action = (promise) => (...args) =>
   promise(...args)
