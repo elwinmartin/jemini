@@ -18,6 +18,9 @@
       "url": "https://twitter.com/joshmanders"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "jemini": {
       "program": "lib/commands",
