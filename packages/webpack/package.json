@@ -1,0 +1,32 @@
+{
+  "name": "@jemini/webpack",
+  "version": "0.1.0",
+  "description": "Asset bundling with webpack",
+  "repository": "aniftyco/jemini",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "author": {
+    "name": "Nifty Development, LLC",
+    "email": "support@aniftyco.com",
+    "url": "https://aniftyco.com"
+  },
+  "contributors": [
+    {
+      "name": "Josh Manders",
+      "url": "https://twitter.com/joshmanders"
+    }
+  ],
+  "config": {
+    "jemini": {
+      "program": "lib/commands",
+      "app": "lib/app"
+    }
+  },
+  "dependencies": {
+    "webpack": "^4.23.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3"
+  },
+  "devDependencies": {}
+}
