@@ -5,59 +5,32 @@ import moduleAlias from 'module-alias';
 import {resolve} from 'app-root-path';
 import babel from '@babel/register';
 import babelConfig from './babel';
-import {loadDependencies} from './utils';
-import {env} from './utils';
+import {env, loadDependencies, action, log, exit} from './utils';
 import {name, version} from '../package.json';
+import commands from './commands';
 
 dotenv.config();
-process.env.APP_PATH = resolve(env('JEMINI_DEV', '.'));
+env.set('APP_PATH', resolve(env('__SECRET_PATH_DO_NOT_USE_OR_YOU_WILL_BE_FIRED', '.')));
 moduleAlias.addAlias('@app', env('APP_PATH'));
 babel(babelConfig);
 
-const packageJson = require('@app/package');
+const pkgJson = require('@app/package');
 const program = new Command(chalk.green(name)).version(version, '-v, --version').usage('[command] [options]');
+const context = {
+  program,
+  action,
+  chalk,
+  log,
+  exit,
+};
 
-const action = (promise) => (...args) =>
-  promise(...args)
-    .then((response) => {
-      process.stdout.write(`${response}\n`);
-      process.exit(0);
-    })
-    .catch((err) => {
-      process.stderr.write(`${chalk.red(err.stack)}\n`);
-      process.exit(1);
-    });
-
-loadDependencies(packageJson, (pkg, dependency) => {
+loadDependencies(pkgJson, (pkg, dependency) => {
   if (pkg.config && pkg.config.jemini && pkg.config.jemini.program) {
-    require(`${dependency}/${pkg.config.jemini.program}`).call({
-      program,
-      action,
-      chalk,
-    });
+    require(`${dependency}/${pkg.config.jemini.program}`).call(context);
   }
 });
 
-program
-  .command('start')
-  .description('Start the server.')
-  .action(async () => {
-    const {default: app} = require('./');
-
-    loadDependencies(packageJson, (pkg, dependency) => {
-      if (pkg.config && pkg.config.jemini && pkg.config.jemini.app) {
-        require(`${dependency}/${pkg.config.jemini.app}`).call({app});
-      }
-    });
-
-    try {
-      require('@app/jemini');
-    } catch (err) {
-      // not found, ignore it
-    }
-
-    await app.start();
-  });
+commands.call(context, pkgJson);
 
 program.commands = program.commands.sort((a, b) => {
   return a._name.localeCompare(b._name);
