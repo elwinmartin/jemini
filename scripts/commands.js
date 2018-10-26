@@ -27,6 +27,8 @@ const watchCommand = () => {
   const FAILED = chalk.red('FAILED');
   const DELETED = chalk.yellow('DELETED');
 
+  buildCommand();
+
   process.stdout.write(chalk.magenta('\n Watching Packages\n'.toUpperCase()));
   process.stdout.write(` ${Array(COLUMNS - 2).join(chalk.dim('='))} \n`);
 
