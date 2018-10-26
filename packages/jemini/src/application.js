@@ -9,7 +9,7 @@ import {formatError} from 'apollo-errors';
 import schema from '@app/schema';
 import {env} from './utils';
 
-export default class Application {
+class Application {
   express = express();
   host = env('APP_HOST', '0.0.0.0');
   port = env('PORT', 9000);
@@ -39,3 +39,5 @@ export default class Application {
     });
   }
 }
+
+export default new Application();

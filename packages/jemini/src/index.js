@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import {GraphQLSchemaTypeDef} from './graphql';
-import Application from './application';
 import ApolloError, {ApplicationError} from './errors';
+import app from './application';
 
-export default new Application();
+export default app;
 
 export {Router, GraphQLSchemaTypeDef, ApolloError, ApplicationError};
