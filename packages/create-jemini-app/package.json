@@ -1,6 +1,6 @@
 {
   "name": "create-jemini-app",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha.0",
   "description": "Scaffold out a fresh Jemini application",
   "repository": "aniftyco/jemini",
   "bin": "lib/index.js",
@@ -21,6 +21,5 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.19.0"
-  },
-  "devDependencies": {}
+  }
 }
