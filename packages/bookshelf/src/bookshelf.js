@@ -1,4 +1,5 @@
 import {resolve} from 'path';
+import {env} from 'jemini/utils';
 import knex from 'knex';
 import bookshelf from 'bookshelf';
 import {pluggable as modelBase} from 'bookshelf-modelbase';
@@ -6,7 +7,6 @@ import bcrypt from 'bookshelf-bcrypt';
 import scopes from 'bookshelf-scopes';
 import uuid from 'bookshelf-uuid';
 import paranoia from 'bookshelf-paranoia';
-import {env} from 'jemini/lib/utils';
 
 const db = bookshelf(
   knex({
