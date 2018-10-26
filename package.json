@@ -16,8 +16,7 @@
     "build": "node scripts build"
   },
   "workspaces": [
-    "packages/*",
-    "app/"
+    "packages/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.1.2",
