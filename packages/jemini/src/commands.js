@@ -14,7 +14,7 @@ export default function(pkgJson) {
       });
 
       try {
-        require('@app/jemini');
+        require('@app/jemini').call({app});
       } catch (err) {
         // not found, ignore it
       }
