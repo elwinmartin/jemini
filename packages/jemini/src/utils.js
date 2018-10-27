@@ -14,6 +14,8 @@ env.set = (key, value) => {
   process.env[key.toUpperCase()] = value;
 };
 
+env.is = (key, value) => env(key) === value;
+
 export const loadDependencies = (pkg, callback, tree = 'dependencies') => {
   Object.keys(pkg[tree]).forEach((dependency) =>
     callback(require(`${dependency}/package`), dependency, pkg[tree][dependency])
