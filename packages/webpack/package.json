@@ -1,6 +1,6 @@
 {
   "name": "@jemini/webpack",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Asset bundling with webpack",
   "repository": "aniftyco/jemini",
   "engines": {
