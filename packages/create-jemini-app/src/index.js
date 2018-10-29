@@ -1,17 +1,30 @@
 #!/usr/bin/env node
+import {Command} from 'commander';
 import chalk from 'chalk';
+import {version} from '../package';
+import setup from './setup';
 
-const [major] = process.versions.node.split('.');
+const program = new Command('jemini-app')
+  .version(version, '-v, --version')
+  .option('-t, --template <repo>', 'github repo to scaffold from')
+  .option('-N, --next', 'use unstable version')
+  .arguments('<directory>')
+  .usage(`${chalk.green('<directory>')} [options]`)
+  .action((...args) =>
+    setup(...args)
+      .then((response) => {
+        if (response) {
+          process.stdout.write(`${response}\n`);
+        }
+        process.exit(0);
+      })
+      .catch((err) => {
+        process.stderr.write(`${chalk.red(err.message)}\n`);
+        process.exit(1);
+      })
+  )
+  .parse(process.argv);
 
-if (major < 8) {
-  process.stderr.write(
-    chalk.red(
-      `You are running Node ${
-        process.versions.node
-      }.\nCreate Jemini App requires Node 8 or higher.\nPlease update your version of node.\n`
-    )
-  );
-  process.exit(1);
+if (program.args.length === 0) {
+  program.outputHelp();
 }
-
-process.stdout.write(chalk.yellow(`Create Jemini App is not implemented yet.\n`));
