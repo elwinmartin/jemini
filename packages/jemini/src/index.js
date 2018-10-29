@@ -64,6 +64,7 @@ import {
   GraphQLScalarLiteralParser,
 } from 'graphql';
 import {makeExecutableSchema} from 'graphql-tools';
+import gql from 'graphql-tag';
 import {GraphQLSchemaTypeDef} from './graphql';
 import ApolloError, {ApplicationError} from './errors';
 import app from './application';
@@ -145,4 +146,5 @@ export {
   GraphQLScalarValueParser,
   GraphQLScalarLiteralParser,
   makeExecutableSchema,
+  gql,
 };
