@@ -1,6 +1,6 @@
 {
   "name": "jemini",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Create applications from out of this world",
   "repository": "aniftyco/jemini",
   "bin": "lib/program.js",
