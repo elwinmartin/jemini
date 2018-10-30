@@ -1,1 +1,3 @@
-module.exports = require('./lib/utils');
+const {env} = require('./lib/utils');
+
+module.exports = {env};

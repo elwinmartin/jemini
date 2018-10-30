@@ -29,7 +29,7 @@
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "eslint": "^5.7.0",
-    "eslint-config-nifty": "^1.1.0",
+    "eslint-config-nifty": "^1.1.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "glob": "^7.1.3",

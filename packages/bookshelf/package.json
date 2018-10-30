@@ -37,17 +37,12 @@
     "bookshelf-uuid": "^1.0.0",
     "faker": "^4.1.0",
     "graphql": "^14.0.2",
-    "knex": "^0.15.2",
+    "knex": "^0.15.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
     "mysql": "^2.16.0",
-    "pg": "^7.5.0",
-    "sqlite3": "^4.0.2"
-  },
-  "peerDependencies": {
-    "mysql": "^2.16.0",
-    "pg": "^7.5.0",
-    "sqlite3": "^4.0.2"
+    "pg": "^7.6.0",
+    "sqlite3": "^4.0.3"
   }
 }
